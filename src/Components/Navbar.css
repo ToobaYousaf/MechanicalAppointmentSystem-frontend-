@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 60px;
+    margin-top: 1%;
+   
+    color: green;
+  }
+  
+  .container h1 {
+    margin: 0;
+    margin-top: 4%;
+  }
+
+.bar{
+  margin-top: 2%;
+}
+  .semi-round-btn {
+    background-color: green;
+    color: white;
+    border: 20px;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 20px 20px 20px 20px; /* Semi-round top corners */
+  }
+  
+  .semi-round-btn:hover {
+    background-color: darkgreen;
+  }
+  
+  
+  
+  
+  
+  .logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 10px 0;
+    padding: 0;
+  }
+  
+  ul li {
+    display: flex; /* Change display to flex */
+    margin-right: 10px;
+    color: black;
+  }
+  
+  .searchbox {
+    display: flex;
+    align-items: center;
+  }
+  .span{
+    color: black;
+  }
+  .searchbox input[type='text'] {
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .toggle-icon {
+    width: 30px;
+    height: auto;
+  }
