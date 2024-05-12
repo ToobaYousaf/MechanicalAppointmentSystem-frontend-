@@ -52,7 +52,7 @@ export default function Login() {
       <Toaster position='top-center' reverseOrder={false} />
 
       <div className='flex justify-center items-center h-screen'>
-        <div styleName={glassStyle} styleName={{ width: '45%' }}>
+        <div styleName={{ width: '45%' }}>
           <div className='tittle flex flex-col items-center'>
             <h4 className='text-5xl font-bold text-green-500'>
               Login!
