@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Topbikes.css';
-import b1 from "../images/bp1.jpg";
-import b2 from "../images/bp2.jpg";
-import b3 from "../images/bp3.jpg";
+import b1 from "../images/acc1.jpg";
+import b2 from "../images/acc2.jpg";
+import b3 from "../images/acc3.jpg";
 import b4 from "../images/bp4.jpg";
 import b5 from "../images/bp5.jpg";
 import b6 from "../images/bp6.jpg";
@@ -13,16 +13,16 @@ import b9 from "../images/bp8.jpg";
 function Topbikes({ title }) {
   const [currentCard, setCurrentCard] = useState(0);
   const totalCards = 10;
-  const cardsPerPage = 4;
+  const cardsPerPage = 3;
 
   const images = [b1, b2, b3, b4, b5, b6, b7, b8, b9];
   const names = [
-    "yalla habibi yalla",
-    "yalla habibi yalla",
-    "yalla habibi yalla",
-    "yalla habibi yalla",
-    "yalla habibi yalla",
-    "yalla habibi yalla",
+    "Check engine ",
+    "Tyres Repair",
+    "Color parts",
+    "Brake repair",
+    "Electrical repair",
+    "Air system",
     "yalla habibi yalla",
     "yalla habibi yalla",
     "yalla habibi yalla",
@@ -45,12 +45,13 @@ function Topbikes({ title }) {
     console.log(`View Add clicked for card ${index}`);
     // Add your logic to handle viewing the ad
   };
+  <br></br>
 
   return (
     <div className="card-container">
       <div className="card">
         <div className="card-content">
-          <h2> Mechanic lists</h2>
+          <h2> Services lists</h2>
           <div className="inner-card-row">
             {Array.from({ length: cardsPerPage }).map((_, index) => {
               const cardIndex = currentCard + index;
@@ -60,7 +61,10 @@ function Topbikes({ title }) {
                     <img src={images[cardIndex % images.length]} alt={`Featured Bike ${cardIndex + 1}`} />
                   </div>
                   <div className="inner-card-text">
-                    <h6>{names[cardIndex % names.length]} <br /> PKR 2000<br/> </h6>
+                    <br></br>
+                    <div className="mechanic-name">{names[cardIndex % names.length]}</div>
+                    <div className="star-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    <div className="price">PKR 2000</div>
                   </div>
                   <button className="view-add-button semi-round" onClick={() => handleViewAdd(cardIndex)}>View Add</button>
                 </div>
