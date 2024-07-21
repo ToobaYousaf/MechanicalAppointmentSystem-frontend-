@@ -7,6 +7,8 @@ import { useFormik } from 'formik';
 
 
 import { height } from '@fortawesome/free-solid-svg-icons/fa0';
+import { signIn } from '../Api/api';
+import { notifyError, notifySuccess } from '../utils/helpers';
 
 export default function Login()
  {
@@ -14,7 +16,6 @@ export default function Login()
   const formik = useFormik({
     initialValues: {
       email: '',
-      username: '',
       password: ''
     },
     validateOnBlur: false,
@@ -22,6 +23,12 @@ export default function Login()
     onSubmit: async (values) => {
       values = await Object.assign(values, { Profile: file || '' });
       console.log(values);
+      signIn(values.email, values.password).then((res)=>{
+        notifySuccess("login Successfully",1000)
+      }).catch((err)=>{
+        console.log(err.response.data.message)
+        notifyError(err.response.data.message,1000)
+      })
     }
   });
 
@@ -118,7 +125,6 @@ export default function Login()
             </h4>
             <div className="text-box flex flex-col items-center gap-6" style={{display:"flex",flexDirection:"column", justifyContent:"center", rowGap:"20px"}} >
               <input {...formik.getFieldProps('email')} style={textboxStyle} type="text" placeholder="Email" />
-              <input {...formik.getFieldProps('username')} style={textboxStyle} type="text" placeholder="Username" />
               <input {...formik.getFieldProps('password')} style={textboxStyle} type="text" placeholder="Password" />
               <div style={{ display: 'flex', justifyContent: 'center' , alignSelf:"center"
               }}>

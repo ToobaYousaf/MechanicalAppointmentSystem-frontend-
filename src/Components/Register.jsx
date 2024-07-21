@@ -4,15 +4,20 @@ import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import { useFormik } from 'formik';
-import { height } from '@fortawesome/free-solid-svg-icons/fa0';
 import { Dropdown } from 'bootstrap';
+import { signUp } from '../Api/api';
+import { useNavigate } from 'react-router-dom';
+import { notifySuccess, notifyError } from '../utils/helpers';
 
 export default function Register() {
+  const navigate = useNavigate()
   const [file, setFile] = useState();
   const [selectedRole, setSelectedRole] = useState('mechanic'); // Default role
   const handleRoleChange = (e) => {
     setSelectedRole(e.target.value);
-  };
+    console.log(e.target.value)
+    setFile(e.target.value)
+    };
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -24,6 +29,14 @@ export default function Register() {
     onSubmit: async (values) => {
       values = await Object.assign(values, { Profile: file || '' });
       console.log(values);
+      signUp(values.email, values.username,values.password, values.Profile).then((res)=>{
+        notifySuccess("signed up sucessfully",1000) 
+        navigate('/login')
+        console.log(res)}).catch((err)=>{
+          console.log(err)
+          notifyError(err.response.data.message,1000) 
+        })
+     
     }
   });
 
