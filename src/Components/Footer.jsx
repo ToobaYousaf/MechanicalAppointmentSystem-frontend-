@@ -8,7 +8,7 @@ import { FaPhone, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 function Footer() {
     return (
         <div>
-            <h4>Welcome Footer</h4>
+            
             <div className="footer-container">
                 <div className="footer-column" style={{ flex: '30px', textAlign: 'center' }}>
                     <form>
@@ -21,10 +21,18 @@ function Footer() {
                         </div>
                         <label>Follow us!</label>
                         <div className="mt-4">
-                            <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-twitter"></i></a>
-                            <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-instagram"></i></a>
-                            <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-linkedin-in"></i></a>
+                        <span style={{ padding: '5px' }}>
+        <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-facebook-f"></i></a>
+    </span>
+    <span style={{ padding: '5px' }}>
+        <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-twitter"></i></a>
+    </span>
+    <span style={{ padding: '5px' }}>
+        <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-instagram"></i></a>
+    </span>
+    <span style={{ padding: '5px' }}>
+        <a href="#" className="btn btn-floating btn-light btn-lg"><i className="fab fa-linkedin-in"></i></a>
+    </span>
                         </div>
                     </form>
                     <br />
